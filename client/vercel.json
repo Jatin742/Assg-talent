@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/v1/(.*)",
+        "destination": "https://talent-dev.onrender.com/api/v1/$1"
+      }
+    ]
+  }
+  

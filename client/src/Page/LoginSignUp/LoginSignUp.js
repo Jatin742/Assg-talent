@@ -1,19 +1,13 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react'
 import "./LoginSignUp.css"
-import { Link, useLocation, useNavigate } from "react-router-dom";
-// import MailOutlineIcon from "@material-ui/icons/MailOutline";
-// import LockOpenIcon from "@material-ui/icons/LockOpen";
-// import FaceIcon from "@material-ui/icons/Face";
-// import Profile from "../../images/Profile.png";
-
-// import { useDispatch, useSelector } from "react-redux";
-// import {clearErrors, login, register} from "../../Actions/userActions";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {clearErrors, login, register} from "../../Actions/userActions";
 
 const LoginSignUp = () => {
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
-  const location = useLocation();
-  // const { error, loading, isAuthenticated } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { error, isAuthenticated } = useSelector((state) => state.user);
 
   const loginTab = useRef(null);
   const registerTab = useRef(null);
@@ -27,14 +21,11 @@ const LoginSignUp = () => {
     email: "",
     password: "",
   })
-  // const { name, email, password } = user;
+  const { name, email, password } = user;
 
-  const name="";
-  const email="";
-  const password="";
   const loginSubmit = (e) => {
     e.preventDefault();
-    // dispatch(login(loginEmail, loginPassword));
+    dispatch(login(loginEmail, loginPassword));
   }
 
   const registerSubmit = (e) => {
@@ -44,7 +35,7 @@ const LoginSignUp = () => {
     myForm.set("email", email);
     myForm.set("password", password);
 
-    // dispatch(register(myForm));
+    dispatch(register(myForm));
   }
   const registerDataChange = async (e) => {
 
@@ -52,13 +43,13 @@ const LoginSignUp = () => {
   }
 
   useEffect(() => {
-    // if (error) {
-    //   dispatch(clearErrors());
-    // }
-    // if (isAuthenticated) {
-    //   navigate("/");
-    // }
-  }, []);
+    if (error) {
+      dispatch(clearErrors());
+    }
+    if (isAuthenticated) {
+      navigate("/");
+    }
+  }, [error, isAuthenticated, dispatch, navigate]);
   const switchTabs = (e, tab) => {
     if (tab === "login") {
       switcherTab.current.classList.add("shiftToNeutral");
