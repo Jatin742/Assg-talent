@@ -1,0 +1,15 @@
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.75rem;
+  }
+
+  .containerr {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .CarouselImagee {
+    width: 400px;
+    height: 400px;
+  }
