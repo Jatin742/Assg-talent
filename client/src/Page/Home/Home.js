@@ -5,7 +5,7 @@ import busfont from "./images/bus-front.svg";
 import chatsquare from "./images/chat-square-heart.svg";
 import chevronright from "./images/chevron-right.svg";
 import family from "./images/family.jpg";
-import dog from "./images/dog.jpg";
+import family2 from "./images/family-2.jpg";
 import moving from "./images/moving-van.jpg";
 import "./Home.css";
 
@@ -75,7 +75,7 @@ const Home = () => {
         <div id="carouselExample" className="carousel slide">
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img src={dog} className="d-block w-100" alt="..." />
+              <img src={family2} className="d-block w-100" alt="..." />
             </div>
             <div className="carousel-item">
               <img src={family} className="d-block w-100" alt="..." />
