@@ -171,6 +171,7 @@
         background-color: black;
         opacity: 1;
         transition: all 0.2s linear;
+        align-items: flex-start;
     }
     
 
@@ -182,6 +183,9 @@
         left: 0;
     }
 
+    .nav .nav-items-box .nav-items {
+        padding: 0;
+    }
     .nav .nav-items-box .nav-items li {
         width: 100%;
         padding: 0;
